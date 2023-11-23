@@ -44,7 +44,7 @@ class SetupDatabase {
             this.needSetup = false;
 
         } catch (e) {
-            log.info("setup-database", "db-config.json is not found or invalid: " + e.message);
+            log.info("setup-database", "db-config.json is not found or invalid, open your browser to try to generate a database. Thrown error: " + e.message);
 
             // Check if kuma.db is found (1.X.X users)
             if (fs.existsSync(path.join(Database.dataDir, "kuma.db"))) {
